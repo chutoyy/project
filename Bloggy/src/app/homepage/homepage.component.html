@@ -1,0 +1,26 @@
+<h1>Liste des posts</h1>
+<div class="container">
+    <div class="row">
+        <div *ngFor="let post of postList" class="col m4 s6">
+            <div class="card horizontal" >
+                
+                <div class="card-image">
+                
+                </div>
+                <div class="card-stacked">
+                    <div class="card-content">
+                      <p style="font-weight: bold;tex">{{post.title}}</p>
+                      <p><span>{{post.created_at}}</span></p>
+                      <p><span>{{post.resume}}</span></p>
+                      <p><span>{{post.author_id}}</span></p>
+            
+                      <a  [routerLink]="['/posts', post.id]" class="waves-effect waves-light btn"><i class="material-icons right"></i>Read more</a>
+                      <img src="{{post.image_url}}">
+                    
+                      
+        
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

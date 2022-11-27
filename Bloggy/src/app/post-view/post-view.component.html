@@ -1,0 +1,8 @@
+<p>post-view works!</p>
+<div *ngIf="posts">{{posts.title}}
+    {{posts.content}}
+    {{posts.author_id}}
+
+</div>
+
+<a (click)="goToPostList()" class="waves-effect waves-light btn"><i class="material-icons right"></i>Post liste</a>
