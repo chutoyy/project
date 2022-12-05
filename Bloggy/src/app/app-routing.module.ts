@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { HomepageComponent } from './homepage/homepage.component';
 import { Routes, RouterModule } from '@angular/router';
 import { PostViewComponent } from './post-view/post-view.component';
+import { AdminHomepageComponent } from './admin-homepage/admin-homepage.component';
+import { AdminCreateComponent } from './admin-create/admin-create.component';
 
 
 const routes: Routes = [
@@ -11,6 +13,12 @@ const routes: Routes = [
   },
   {
     path:"posts/:id",component: PostViewComponent,
+  },
+  {
+    path:"create",component: AdminCreateComponent,
+  },
+  {
+    path:"admin",component: AdminHomepageComponent,
   },
   {
     path:"", redirectTo:"homepage",pathMatch:"full"
