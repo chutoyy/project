@@ -37,6 +37,7 @@ export class AdminEditComponent implements OnInit {
       this.post.updatePost(this.router.snapshot.params['id'],this.editPost.value).subscribe((result:any)=>{
         this.alert2=true
         this.editPost.reset()
+        
       })
     }
   

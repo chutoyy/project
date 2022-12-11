@@ -1,3 +1,4 @@
+<body style="padding: 5%;">
 <h1>Modifier le post</h1>
 <div *ngIf="alert2" class="alert alert-success alert-dismissible fade show" role="alert">
   <strong>Modifier avec succès</strong>
@@ -12,7 +13,7 @@
   <div class="formGroup">
     <label>Author</label>
     <select name="author_id" class="form-control" formControlName="author_id">
-      <option value="">--Choose an author--</option>
+      <option value=""selected="true" disabled="disabled">--Choose an author--</option>
       <option value="1">Walter White</option>
       <option value="2">Jessie Pinkman</option>
       <option value="3">Saul Goodman</option>
@@ -32,6 +33,6 @@
   <label>Content</label>
   <input type="text" class="form-control" placeholder="Enter the content" formControlName="content">
 </div>
-  <button type="submit">Modifier le post</button>
+  <button type="submit" class="btn btn-primary">Modifier le post</button>
   </form>
-
+</body>

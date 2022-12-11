@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HomepageComponent } from './homepage/homepage.component';
@@ -11,6 +11,7 @@ import { AdminCreateComponent } from './admin/admin-create/admin-create.componen
 import { ReactiveFormsModule } from '@angular/forms';
 import { AdminEditComponent } from './admin/admin-edit/admin-edit.component';
 import { NotfoundComponent } from './notfound/notfound.component';
+import { ErrorCatchingInterceptor } from './interceptors/error-catching.interceptor';
 
 
 
@@ -33,7 +34,11 @@ import { NotfoundComponent } from './notfound/notfound.component';
     HttpClientModule, 
     ReactiveFormsModule
   ],
-  providers: [PostsService],
+  providers: [PostsService,{
+    provide: HTTP_INTERCEPTORS,
+    useClass: ErrorCatchingInterceptor, 
+    multi: true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
