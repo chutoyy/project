@@ -10,6 +10,7 @@ import { AdminHomepageComponent } from './admin/admin-homepage/admin-homepage.co
 import { AdminCreateComponent } from './admin/admin-create/admin-create.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AdminEditComponent } from './admin/admin-edit/admin-edit.component';
+import { NotfoundComponent } from './notfound/notfound.component';
 
 
 
@@ -22,6 +23,7 @@ import { AdminEditComponent } from './admin/admin-edit/admin-edit.component';
     AdminHomepageComponent,
     AdminCreateComponent,
     AdminEditComponent,
+    NotfoundComponent,
   
 
   ],

@@ -31,7 +31,9 @@ export class PostViewComponent implements OnInit, OnDestroy {
         let id = mapp.get('id')
         if(id != null){
           return this.post.getPostId(parseInt(id))        
-        } else {
+        }
+        
+        else {
           return of()
         }
         }))

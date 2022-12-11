@@ -23,7 +23,7 @@ export class AdminEditComponent implements OnInit {
   ngOnInit(): void {
     this.post.getPost(this.router.snapshot.params['id']).subscribe((result:any)=>
     {
-      console.table("result", result)
+     
       this.editPost = new FormGroup({
         title: new FormControl(result['title']),
         author_id: new FormControl(result['author_id']),

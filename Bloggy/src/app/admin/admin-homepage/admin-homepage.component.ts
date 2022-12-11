@@ -31,12 +31,7 @@ export class AdminHomepageComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.sub.unsubscribe()
   }
-  List() {
-    let liste = this.post.getPostsList().subscribe((result) => {
-      console.table(result)
-    })
-    this.sub.add(liste)
-  }
+  
   goToAddForm() {
     this.router.navigate(['/create']);
   }
@@ -56,6 +51,7 @@ export class AdminHomepageComponent implements OnInit, OnDestroy {
     if (titre == post.title) {
       this.deletePost(post)
       alert("Vous avez supprimé " + post.title)
+      this.router.navigate(['/admin'])
     }
     else {}
   }

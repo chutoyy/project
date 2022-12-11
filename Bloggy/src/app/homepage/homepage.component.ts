@@ -2,6 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { PostsService } from '../posts.service';
 import { Router, ActivatedRoute } from '@angular/router'
 import { Subscription } from 'rxjs'
+import { HttpResponse } from '@angular/common/http';
 @Component({
   selector: 'app-homepage',
   templateUrl: './homepage.component.html',
@@ -16,13 +17,14 @@ export class HomepageComponent implements OnInit, OnDestroy {
   sub: Subscription = new Subscription()
   ngOnInit(): void {
     let list = this.post.getPostsList().subscribe((result) => {
+      
       this.postList = result
 
     })
     let authors = this.post.getAuthorsList().subscribe((result) => {
 
       this.auteursList = result
-      console.log(result)
+      
     })
     this.sub.add(authors)
     this.sub.add(list)

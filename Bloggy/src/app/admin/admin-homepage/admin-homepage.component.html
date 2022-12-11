@@ -25,9 +25,9 @@
         <td>{{getAuthorNameById(post)}}</td>
         <td>{{post.created_at|date: 'dd/MM/yyyy'}}</td>
         <td>
-          <a routerLink="/edit/{{post.id}}"><i class="material-icons">edit</i></a>
+          <a routerLink="/edit/{{post.id}}"><i class="material-icons" style="color: black;">edit</i></a>
 
-          <a (click)="confirmation(post)"><i class="material-icons">delete</i></a>
+          <a (click)="confirmation(post)"><i class="material-icons" style="color: black;">delete</i></a>
         </td>
 
 

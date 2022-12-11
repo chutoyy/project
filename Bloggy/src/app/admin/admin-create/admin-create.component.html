@@ -8,6 +8,7 @@
   <div class="formGroup">
       <label>Title</label>
       <input type="text" class="form-control" placeholder="Enter the title" formControlName="title">
+      
   </div>
   <div class="formGroup">
     <label>Author</label>
@@ -32,6 +33,6 @@
   <label>Content</label>
   <input type="text" class="form-control" placeholder="Enter the content" formControlName="content">
 </div>
-  <button type="submit">Ajouter</button>
+  <button type="submit" [disabled]="!addPost.valid">Ajouter</button>
   </form>
 </body>
