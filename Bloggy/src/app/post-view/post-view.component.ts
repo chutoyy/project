@@ -32,7 +32,6 @@ export class PostViewComponent implements OnInit, OnDestroy {
         if(id != null){
           return this.post.getPostId(parseInt(id))        
         }
-        
         else {
           return of()
         }

@@ -1,6 +1,7 @@
   <nav>
+    
     <div class="nav-wrapper">
-      <div  class="brand-logo center">Bloggy</div>
+      <div  class="brand-logo center" [routerLink]="['/homepage']">Bloggy</div>
       <ul id="nav-mobile" class="left hide-on-med-and-down">
         <li><a  [routerLink]="['/homepage']">Home</a>
         </li>
@@ -10,4 +11,6 @@
       </ul>
     </div>
   </nav>
+  <br>
+  <li><a class="btn btn-primary" [routerLink]="['/admin']">Admin</a> </li>
 <router-outlet></router-outlet>

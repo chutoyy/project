@@ -22,7 +22,7 @@ export class ErrorCatchingInterceptor implements HttpInterceptor {
           if (errorResponse.status === HttpStatusCode.NotFound){
             this.router.navigateByUrl('/error')
           }else if(errorResponse.status === HttpStatusCode.BadRequest){
-            alert("Look at your console, bad request")
+            alert("Bad request, look at your console")
           }else{
             console.log(errorResponse)
             this.errorHandler.handleError(errorResponse)
