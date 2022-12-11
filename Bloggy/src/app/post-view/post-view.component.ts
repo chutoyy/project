@@ -39,10 +39,7 @@ export class PostViewComponent implements OnInit, OnDestroy {
     ).subscribe((result)=>
     {
       this.posts=result
-    }),(error: string)=>{
-      console.log(error)
-      this.error=error
-    }}
+    })}
 
   ngOnDestroy(): void {
     this.sub.unsubscribe()
