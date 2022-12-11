@@ -1,6 +1,6 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
-import { PostsService } from '../posts.service';
-import {FormGroup, FormControl, Validators } from '@angular/forms'
+import { Component, OnInit } from '@angular/core';
+import { PostsService } from '../../posts.service';
+import {FormGroup, FormControl } from '@angular/forms'
 import {Router, ActivatedRoute} from '@angular/router';
 
 
@@ -11,6 +11,7 @@ import {Router, ActivatedRoute} from '@angular/router';
   ]
 })
 export class AdminCreateComponent implements OnInit {
+  alert2:Boolean=false
   addPost = new FormGroup({
     title: new FormControl(''),
     author_id: new FormControl(''),
@@ -27,5 +28,11 @@ export class AdminCreateComponent implements OnInit {
     this.posts.addUser(this.addPost.value).subscribe((result)=>
     {
       console.table(result)
-    })}
+      this.alert2=true
+      this.addPost.reset()
+  
+    })
+   
+  }
+
 }

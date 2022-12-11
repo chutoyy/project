@@ -1,8 +1,24 @@
-<p>post-view works!</p>
-<div *ngIf="posts">{{posts.title}}
-    {{posts.content}}
-    {{posts.author_id}}
+
+
+
+
+
+
+<body style="text-align: center;">
+    
+<div class="container" style="margin-left: 40%;">
+<div class="card" style="width: 18rem;" *ngIf="posts">
+    <img src="{{posts.image_url}}" class="card-img-top" >
+    <div class="card-body">
+      <h5 class="card-title">{{posts.title}}</h5>
+      <p>by {{getAuthorNameById(posts)}}</p>
+      <p class="card-text">{{posts.content}}</p>
+      <a (click)="goToPostList()" class="btn btn-primary">Liste des posts </a>
+      {{error}}
+    </div>
+  </div>
 
 </div>
 
-<a (click)="goToPostList()" class="waves-effect waves-light btn"><i class="material-icons right"></i>Post liste</a>
+
+</body>

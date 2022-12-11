@@ -6,9 +6,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { HomepageComponent } from './homepage/homepage.component';
 import { PostsService } from './posts.service';
 import { PostViewComponent } from './post-view/post-view.component';
-import { AdminHomepageComponent } from './admin-homepage/admin-homepage.component';
-import { AdminCreateComponent } from './admin-create/admin-create.component';
+import { AdminHomepageComponent } from './admin/admin-homepage/admin-homepage.component';
+import { AdminCreateComponent } from './admin/admin-create/admin-create.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { AdminEditComponent } from './admin/admin-edit/admin-edit.component';
+
+
 
 
 @NgModule({
@@ -17,7 +20,10 @@ import { ReactiveFormsModule } from '@angular/forms';
     HomepageComponent,
     PostViewComponent,
     AdminHomepageComponent,
-    AdminCreateComponent
+    AdminCreateComponent,
+    AdminEditComponent,
+  
+
   ],
   imports: [
     BrowserModule,

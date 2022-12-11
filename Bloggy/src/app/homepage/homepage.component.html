@@ -2,20 +2,22 @@
 <div class="container">
     <div class="row">
         <div *ngFor="let post of postList" class="col m4 s6">
-            <div class="card horizontal" >
+            <div class="card horizontal" style="text-align: center;">
                 
                 <div class="card-image">
                 
                 </div>
                 <div class="card-stacked">
                     <div class="card-content">
-                      <p style="font-weight: bold;tex">{{post.title}}</p>
-                      <p><span>{{post.created_at}}</span></p>
+                      <p style="font-weight: bold;">{{post.title}}</p>
+                      <p><span>{{post.created_at | date: 'dd/MM/yyyy'}}</span></p>
                       <p><span>{{post.resume}}</span></p>
-                      <p><span>{{post.author_id}}</span></p>
-            
+                      <p><span>by {{getAuthorNameById(post)}}</span></p>
+      
+                      <p><img src="{{post.image_url}}"></p>
+                      <br>
                       <a  [routerLink]="['/posts', post.id]" class="waves-effect waves-light btn"><i class="material-icons right"></i>Read more</a>
-                      <img src="{{post.image_url}}">
+                      
                     
                       
         

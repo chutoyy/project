@@ -1,12 +1,24 @@
+<body style="padding: 5%;">
 <h1>Ajouter un post</h1>
+<div *ngIf="alert2" class="alert alert-success alert-dismissible fade show" role="alert">
+  <strong>Ajout avec succès</strong>
+  
+</div>
 <form [formGroup]="addPost" (ngSubmit)="newPost()">
   <div class="formGroup">
-      <label><Title></Title></label>
+      <label>Title</label>
       <input type="text" class="form-control" placeholder="Enter the title" formControlName="title">
   </div>
   <div class="formGroup">
-      <label>Author</label>
-      <input type="text" class="form-control" placeholder="Enter the author" formControlName="author_id">
+    <label>Author</label>
+    <select name="author_id" class="form-control" formControlName="author_id">
+      <option value=""selected="true" disabled="disabled">--Choose an author--</option>
+      <option value="1">Walter White</option>
+      <option value="2">Jessie Pinkman</option>
+      <option value="3">Saul Goodman</option>
+      <option value="4">Kim Wexler</option>
+      <option value="5">Nacho Varga</option>
+  </select>
   </div>
   <div class="formGroup">
     <label>Image</label>
@@ -22,4 +34,4 @@
 </div>
   <button type="submit">Ajouter</button>
   </form>
-
+</body>

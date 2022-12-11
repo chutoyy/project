@@ -1,0 +1,39 @@
+<body style="padding-left:50px;">
+  <h1 style="text-align: center;">Administration Page</h1>
+  <br>
+  <a (click)="goToAddForm()" class="btn-floating btn-large waves-effect waves-light red"><i
+      class="material-icons">add</i></a>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Image</th>
+        <th>Title</th>
+        <th>Autor</th>
+        <th>Date</th>
+        <th>Actions</th>
+
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let post of postList">
+
+        <td>{{post.id}}</td>
+        <td><img src="{{post.image_url}}" style="width: 50px;height: 50px;"></td>
+        <td>{{post.title}}</td>
+        <td>{{getAuthorNameById(post)}}</td>
+        <td>{{post.created_at|date: 'dd/MM/yyyy'}}</td>
+        <td>
+          <a routerLink="/edit/{{post.id}}"><i class="material-icons">edit</i></a>
+
+          <a (click)="confirmation(post)"><i class="material-icons">delete</i></a>
+        </td>
+
+
+
+      </tr>
+    </tbody>
+  </table>
+  
+</body>
